@@ -3,7 +3,7 @@ package com.company;
 import javax.naming.LimitExceededException;
 import javax.naming.LinkLoopException ;
 
-public class BankAccount extends Exception{
+public class BankAccount{
 
    public   double amount;
 
@@ -16,11 +16,11 @@ public class BankAccount extends Exception{
         System.out.println("  ваш счет "+ amount);
         return amount;
     }
-   public  void  withDraw(double sum) throws LimitException, LinkLoopException {
+   public  void  withDraw(double sum) throws LimitException, LimitException {
         amount = amount - sum;
        System.out.println("  ваш счет после операчи "+ amount);
        if (sum> getAmount() ) {
-           throw new LinkLoopException("   ");
+           throw new LimitException("   ", 88998);
        }
     }
 }
