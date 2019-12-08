@@ -10,7 +10,7 @@ public class Main {
             try {
                 bankAccount.withDraw(6000);
                 System.out.println(bankAccount.getAmount());
-            } catch (Exception | LimitException re) {
+            } catch ( LimitException re) {
                 System.out.println(re.getMessage());
                 re.printStackTrace();
                 System.out.println("вы можете получат всего лиш эту сумму    "+ bankAccount.getAmount());
@@ -19,10 +19,6 @@ public class Main {
                 break;
 
             }
-
-
         }
-
-
     }
 }
